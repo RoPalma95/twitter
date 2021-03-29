@@ -1,9 +1,34 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Tweet:</strong>
-  <%= @tweet.tweet %>
-</p>
+<div class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-5">
+        <h2 class="title is-2">Tweet</h2>
+        <div class="box">
+          <article class="media">
+            <div class="media-left">
+              <figure class="image is-64x64">
+                <%= gravatar_image_tag(@tweet.user.email, size: 64, alt: @tweet.user.name) %>
+              </figure>
+            </div>
+            <div class="media-content">
+              <div class="content">
+                <strong><%= @tweet.user.name %></strong><br>
+                <small>@<%= @tweet.user.username %></small><br>
+                <p><%= @tweet.tweet %></p>
+              </div>
+            </div>
+          </article>
+        </div>
+        <%= link_to 'Edit', edit_tweet_path(@tweet), class: "button is-info" %>
+        <%= link_to 'Back', tweets_path, class: "button is-info" %>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= link_to 'Edit', edit_tweet_path(@tweet) %> |
-<%= link_to 'Back', tweets_path %>
+
+
+
+

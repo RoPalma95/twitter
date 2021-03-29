@@ -1,5 +1,15 @@
-<h1>New Tweet</h1>
+<div class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-5">
+        <h2 class="title is-2">Tweet about it</h2>
 
-<%= render 'form', tweet: @tweet %>
+        <%= render 'form', tweet: @tweet %>
+        <br>
+        <%= link_to 'Back', tweets_path %>
 
-<%= link_to 'Back', tweets_path %>
+      </div>
+    </div>
+  </div>
+</div>
+
